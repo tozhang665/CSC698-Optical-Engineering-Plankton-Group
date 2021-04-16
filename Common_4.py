@@ -1,11 +1,11 @@
 # User defined files
-VID_FILE_NAME = r'/users/anthonybravo/Desktop/SFSU/CSC667_opticalEngineering/video/merced/0900m2_2.mp4'
+VID_FILE_NAME = r'planktonVariety.mp4'
 OBJECT_ARRAY_FILE_NAME = 'test.csv'
 
 
 # Video processing
 MAX_FRAME = 1012        	  # # dil species starts at frame 742 (this will be the new 0) and ends at after frame 1012. this makes a total of 271 frames to process. number of frames to process, make really big to process entire movie
-START_FRAME = 742
+START_FRAME = 50
 DEBUG = 1                 # shows detection and tracking frame-by-frame (but slows down processing)
 X_REZ_DEBUG = 640
 Y_REZ_DEBUG = 480  		  # debug display

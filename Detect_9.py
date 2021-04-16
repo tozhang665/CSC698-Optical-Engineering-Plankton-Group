@@ -15,15 +15,18 @@ import colorsys
 # V3 Sept 29, 2020 Replaced velocity with average speed
 
 def checkROI(xMaxRez, yMaxRez, xx0, yy0, xx1, yy1):
+    #print (xMaxRez, yMaxRez, xx0, yy0, xx1, yy1)
     xx0 -= C.ENLARGE
     yy0 -= C.ENLARGE 
     xx1 += C.ENLARGE
     yy1 += C.ENLARGE
     touch = 0         # assume enlarged ROI does not touch boundary
+    #print (xMaxRez, yMaxRez, xx0, yy0, xx1, yy1)
     x0 = max(xx0, 0)   # check for negative
     x1 = min(xx1, xMaxRez) # check for too big 
     y0 = max(yy0, 0)
     y1 = min(yy1, yMaxRez)
+    print (x0, x1, y0, y1)
     if x0 != xx0 or x1 != xx1 or y0 != yy0 or y1 != yy1: # if changed any, report touch image boarder
         touch = 1
     return(touch, x0, y0, x1, y1)
@@ -100,9 +103,13 @@ def detectTrackFeature(VID):
             break
         # get image
         ret, colorIM = cap.read()
+        print (colorIM.shape)
         #(row,col,color)=colorIM.shape()
         #colorIM = colorIM[10:-10, 10:-10, :] # get rid of black boarder of 1920x1080 video
-        #(yColorIM, xColorIM, color) = colorIM.shape
+        (yColorIM, xColorIM, color) = colorIM.shape
+        #yColorIM = colorIM[0]
+        #xColorIM = colorIM[1]
+        #color = colorIM[2]
         
         rectIM = np.copy(colorIM) # make copy that can be marked up with rectangles
         if not ret: # check to make sure there was a frame to read
