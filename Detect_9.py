@@ -101,8 +101,8 @@ def detectTrackFeature(VID):
         # get image
         ret, colorIM = cap.read()
         #(row,col,color)=colorIM.shape()
-        colorIM = colorIM[10:-10, 10:-10, :] # get rid of black boarder of 1920x1080 video
-        (yColorIM, xColorIM, color) = colorIM.shape
+        #colorIM = colorIM[10:-10, 10:-10, :] # get rid of black boarder of 1920x1080 video
+        #(yColorIM, xColorIM, color) = colorIM.shape
         
         rectIM = np.copy(colorIM) # make copy that can be marked up with rectangles
         if not ret: # check to make sure there was a frame to read
@@ -192,11 +192,11 @@ def detectTrackFeature(VID):
     return(status, objectArray)
 
 ########## TEST ###########
-if True:
+if False:
     #plankton = 'did_1_1'
-    vid = r'planktonVariety.mp4'
+    vid = r'/users/anthonybravo/Desktop/SFSU/CSC667_opticalEngineering/video/merced/0900m2_2.mp4'
     #objFile='C:/Code/AAA/IEEE_V1/IEEE_V2/DetectTrackCluster/Cluster/csvFile/'+plankton+'_CLUSTER5.csv'
-    objFile = 'dil_ab.csv'
+    objFile = 'test.csv'
     print('Processing')
     (status, objectArray) = detectTrackFeature(vid)
     np.savetxt(objFile, objectArray, header = C.header, fmt = '%f', delimiter = ',') # saves numpy array as a csv file    

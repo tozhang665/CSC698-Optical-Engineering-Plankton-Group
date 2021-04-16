@@ -1,6 +1,6 @@
 # User defined files
-VID_FILE_NAME = r'planktonVariety.mp4'
-OBJECT_ARRAY_FILE_NAME = 'dil_ab.csv'
+VID_FILE_NAME = r'/users/anthonybravo/Desktop/SFSU/CSC667_opticalEngineering/video/merced/0900m2_2.mp4'
+OBJECT_ARRAY_FILE_NAME = 'test.csv'
 
 
 # Video processing
