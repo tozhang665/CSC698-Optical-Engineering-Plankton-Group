@@ -1,10 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue May  4 15:41:56 2021
 
-@author: ramonrodriguez
-"""
+
 
 
 import numpy as np
@@ -12,7 +7,6 @@ import cv2
 import glob
 import CommonWild_1 as C
 import FeatureWild_1 as F
-from sklearn.decomposition import PCA
 
 # Rather than processing a video, DetectTrackFeature code was modified to process all images in a desired directory
 # For this reason, tracking and debug display code were excluded
@@ -67,8 +61,6 @@ def DetectFeature(FOLDER):
         (yColorIM, xColorIM, color) = colorIM.shape
         rectIM = np.copy(colorIM) 	# make copy that can be marked up with rectangles
         (grayIM, threshIM, blurIM, contourList) = imageProcessing(colorIM) 	# do image processing
-        
-    
 
         goodObjCount = 0  # counts number of objects of acceptable area and no touch
         for objContour in contourList:
@@ -108,12 +100,6 @@ def DetectFeature(FOLDER):
         status = 1 # indicates that program is reading images successfully
     return (status, objectArray)
 
-def getPCA(oa):
-    pca = PCA(n_components=C.PCA_COMPONENTS) #This initiates PCA method
-    pcaTerms = pca.fit_transform(oa[:,C.FEATURE_START : C.FEATURE_END])
-    oa[:, C.PCA_1 : C.PCA_3+1] = pcaTerms[:,:C.PCA_COMPONENTS]
-    return oa
-
 ########### TEST ###############
 
 if False:
@@ -121,4 +107,4 @@ if False:
     objFile = 'test.csv'
     print('Processing')
     (status, objectArray) = DetectFeature(folder)
-    np.savetxt(objFile, objectArray, header = C.header, fmt = '%f', delimiter = ',') # saves numpy array as a csv file 
+    np.savetxt(objFile, objectArray, header = C.header, fmt = '%f', delimiter = ',') # saves numpy array as a csv file  

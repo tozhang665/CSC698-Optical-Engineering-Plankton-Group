@@ -172,6 +172,7 @@ def detectTrackFeature(VID):
             #cv2.imshow('blurIM', cv2.resize(blurIM,(C.X_REZ_DEBUG,C.Y_REZ_DEBUG)))      # display reduced image
             cv2.imshow('threshIM', cv2.resize(threshIM,(C.X_REZ_DEBUG,C.Y_REZ_DEBUG)))      # display reduced image
             cv2.imshow('rectIM', cv2.resize(rectIM,(C.X_REZ_DEBUG, C.Y_REZ_DEBUG)))      # display reduced image
+            cv2.moveWindow('threshIM', 640, -200)
             #print('Frame',frameCount,'Good objects',goodObjCount)
             key = cv2.waitKey(10) & 0xFF # read key, test for 'q' quit, pause in msec
             if key == ord('q'):

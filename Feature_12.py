@@ -113,7 +113,7 @@ def getFeatures(grayROI, binaryROI, objContour):
 def calcSpeed(obj):
     # speed calculated as distance between two points separated by SPEED_WINDOW frames
 
-    oc=obj[np.lexsort((obj[:,C.FRAME],obj[:,C.TRACK_ID]))] # sort by ID then FRAME
+    oc = obj[np.lexsort((obj[:,C.FRAME],obj[:,C.TRACK_ID]))] # sort by ID then FRAME
     startIndex=0                    # index where new ID starts
     speed=0
     myID=-1                         # used to detect new ID which resets filter

@@ -19,7 +19,7 @@ INERTIA = []
 
 def Cluster(objectArray, i):
     # Cluster and put cluster group into obj file as predicted class
-    XT=objectArray[:,C.FEATURE_START:]
+    XT=objectArray[:,C.FEATURE_START:C.FEATURE_END]
     K=KMeans(n_clusters=i)       # initiate the k means estimator
     K.fit(XT)                           # Compute k-means clustering
 

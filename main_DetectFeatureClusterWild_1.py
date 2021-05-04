@@ -10,8 +10,9 @@ import matplotlib.pyplot as plt
 
 print('Processing',C.FOLDER)
 (status,objectArray)=D.DetectFeature(C.FOLDER) # status==1 if processed video
+objectArray = D.getPCA(objectArray)                            #for main_detectfeature code
 if status==1:
-    clusterList = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]  # list of amount of clusters to try
+    clusterList = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]  # list of amount of clusters to try
     for i in clusterList:
         (objectArray,inertia,iterations)=K.Cluster(objectArray, i)
         print('clusters:', i,'inertia:',inertia,'iterations',iterations)

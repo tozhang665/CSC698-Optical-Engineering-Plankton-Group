@@ -13,7 +13,7 @@ import cv2
 import numpy as np
 
 ###################### INITIALIZE GLOBAL VALUES #############################
-vid=r'blood2.mp4';
+vid=r'/users/anthonybravo/desktop/sfsu/csc667_opticalengineering/video/merced/0900m2_7.mp4';
 
 xRez=1920; yRez=1080;
 displayScale=1 # scale display output

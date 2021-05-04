@@ -16,7 +16,7 @@ import CommonWild_2 as C # constants used by all programs
 #################### FUNCTIONS ###########################
 
 INERTIA = []
-clusterList = [2, 3, 4, 5, 6]
+clusterList = [2, 3]
 clusterArray = np.array(clusterList)
 def cluster(objectArray, i):
 

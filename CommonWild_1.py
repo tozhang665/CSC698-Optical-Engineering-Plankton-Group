@@ -14,7 +14,7 @@ THICK = 3                 # ROI box line thickness
 # Detector 
 THRESH = 60
 BLUR = 7
-MIN_AREA = 1000
+MIN_AREA = 10000
 MAX_AREA = 2000000
 ENLARGE = 10              # increase ROI to include all of obj, also used to detect if near boarder or other objects in ROI window
 MULTI_OBJECT_REJECT = 0   # 1 = reject obj with multiple objects in ROI
@@ -29,8 +29,7 @@ SPEED_WINDOW = 10
 MIN_SPEED = 10            # objects slower than this are rejected
 
 # Clustering
-PCA_COMPONENTS = 3        # how many PCA components
-N_CLUSTERS = 5            # how many K Means clusters
+PCA_COMPONENTS = 3        # how many K Means clusters
 
 # feature 
 MAX_FEATURES = 68 		  # number of features getFeatures returns. Area is the first feature
@@ -48,6 +47,6 @@ FS = FEATURE_START                # FS is an abbreviation so I don't have to kee
 AREA = FS
 ASPECT_RATIO = FS+1; TEXTURE = FS+2; SOLIDITY = FS+3; E_MAJOR = FS+4; E_MINOR = FS+5; CONTOUR_LEN = FS+6
 PERIMETER = FS+7; RADIUS = FS+8; MEAN = FS+9; STD = FS+10; FEATURE_END = FS+MAX_FEATURE_VECTOR
-PCA_1 = FEATURE_END+1; PCA_2 = PCA_1+1; PCA_3 = PCA_2+1; MAX_OBJ_COL = PCA_3+1 
+PCA_1 = FEATURE_END; PCA_2 = PCA_1+1; PCA_3 = PCA_2+1; MAX_OBJ_COL = PCA_3+1 
 #OBJECT_ARRAY_COL=MAX_OBJECT_VECTOR+MAX_FEATURE_VECTOR # how many col in objectArray
 
